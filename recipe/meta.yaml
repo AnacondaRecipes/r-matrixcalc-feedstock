@@ -24,9 +24,9 @@ requirements:
   build:
     - {{ posix }}zip               # [win]
   host:
-    - r-base
+    - r-base {{ r_version }} 
   run:
-    - r-base
+    - r-base {{ r_version }} 
 
 test:
   commands:
@@ -48,3 +48,9 @@ extra:
     - MathiasHaudgaard
     - FrodePedersen
     - ArneKr
+
+  anaconda-services:
+    ref:  https://anaconda.zendesk.com/agent/tickets/38329
+    reason: "needed for r-zoib"
+    recipe-maintainers:
+      - ianaobi
